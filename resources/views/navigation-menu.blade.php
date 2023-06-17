@@ -108,7 +108,7 @@
             <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                 {{ __('Nadzorna Plošča') }}
             </x-jet-responsive-nav-link>
-            <x-jet-responsive-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
+            <x-jet-responsive-nav-link href="{{ route('services') }}">
                 {{ __('Storitve') }}
             </x-jet-responsive-nav-link>
         </div>

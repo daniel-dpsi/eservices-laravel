@@ -32,6 +32,8 @@ Route::get('/services', function () {
 })->name('services');
 
 Route::get('/search', [ServiceController::class, 'search']);
+Route::get('/type', [ServiceController::class, 'type']);
+Route::get('/region', [ServiceController::class, 'region']);
 
 
 Route::middleware([
@@ -72,18 +74,6 @@ Route::middleware([
     ]);
         return view('about');
     })->name('about');
-    Route::get('/purchase', function () {
-        return view('purchase');
-    })->name('purchase');
-    Route::get('/exchange', function () {
-        return view('exchange');
-    })->name('exchange');
-    Route::get('/marketing', function () {
-        return view('marketing');
-    })->name('marketing');
-    Route::get('/servicelist', function () {
-        return view('servicelist');
-    })->name('servicelist');
     Route::get('/create', function() {
         return view('create');
     })->name('create');

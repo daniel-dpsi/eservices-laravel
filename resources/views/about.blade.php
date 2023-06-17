@@ -28,7 +28,7 @@
 
                             <p class="text-gray-700 font-semibold text-lg" style="text-align:center;">Vaši oglasi:</p>
                             <br>
-                            <table class="mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden">
+                            <table class="mx-auto max-w-2xl w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden">
                                 <thead class="bg-gray-900">
                                     <tr class="text-white text-left">
                                         <th class="font-semibold text-sm uppercase px-6 py-4"> Oglas </th>

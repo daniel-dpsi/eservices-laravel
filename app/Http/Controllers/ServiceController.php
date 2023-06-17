@@ -16,9 +16,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Services::orderBy('id', 'ASC')->get();
-        $data['services'] = $services;
-        return view('service', $data);
+        return Services::orderBy('id', 'ASC')->get();
+        //$data['services'] = $services;
+        //return view('service', $data);
 
         //return Services::orderBy('id', 'ASC')->get();
     }
@@ -150,6 +150,24 @@ class ServiceController extends Controller
         $search = $request->search;
 
         $services = Services::where('title', 'Like', '%'.$search. '%')->get(); //region, municipality, city
+
+        return view('service', compact('services'));
+    }
+
+    public function type(Request $request)
+    {
+        $search = $request->search;
+
+        $services = Services::where('type', 'Like', '%'.$search. '%')->get(); //region, municipality, city
+
+        return view('service', compact('services'));
+    }
+
+    public function region(Request $request)
+    {
+        $search = $request->search;
+
+        $services = Services::where('region', 'Like', '%'.$search. '%')->get(); //region, municipality, city
 
         return view('service', compact('services'));
     }
