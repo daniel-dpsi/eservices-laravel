@@ -165,7 +165,15 @@
 
 
             </div>
+                        
           </div>
+          <footer class="bg-gray-800 text-black pt-4 pb-4">
+                        <div class="text-white" style="text-align: center;">
+                            <p class="font-bold">&copy; 2023 E-STORITVE.COM - Storitvene dejavnosti</p>
+                            <br />
+                            <p>Izvajanje storitev ter transakcije so prepuščene posameznikom, spletni portal ni odgovoren za morebitne izgube ali težave pri izvajanju storitev</p>
+                        </div>
+                </footer>
         </div>
       </div>
                 </div>
@@ -178,5 +186,7 @@
 
             </div>
         </div>
+        
     </div>
+    
 </x-app-layout>

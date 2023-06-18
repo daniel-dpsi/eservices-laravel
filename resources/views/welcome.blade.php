@@ -6,6 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Vaš ponudnik storitev | e-Storitve</title>
+	<script>
+        setTimeout(function(){
+            window.location.href = '/services'; 
+        }, 4000); 
+    </script>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 
@@ -86,9 +91,9 @@
             @if (Route::has('login'))
             <div class="links">
                 @auth
-                <a href="{{ url('/services') }}"><button class="block uppercase mx-auto shadow bg-indigo-700 hover:bg-gray-300 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded slide-in-bottom-subtitle"><b>STORITVE</b></button></a>
+                <a href="{{ url('/services') }}"><button class="block uppercase mx-auto shadow bg-indigo-700 hover:bg-gray-300 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded slide-in-bottom-subtitle"><b>VSTOP</b></button></a>
                 @else
-                <a href="{{ url('/services') }}"><button class="block uppercase mx-auto shadow bg-indigo-700 hover:bg-gray-300 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded slide-in-bottom-subtitle"><b>STORITVE</b></button></a>
+                <a href="{{ url('/services') }}"><button class="block uppercase mx-auto shadow bg-indigo-700 hover:bg-gray-300 focus:shadow-outline focus:outline-none text-white text-xs py-3 px-10 rounded slide-in-bottom-subtitle"><b>VSTOP</b></button></a>
             </div>
         @endif
 

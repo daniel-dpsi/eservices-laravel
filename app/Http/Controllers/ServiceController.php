@@ -106,19 +106,20 @@ class ServiceController extends Controller
     {
         try {
             $service = Services::findOrFail($id);
-            $service->type = $request->input('type');
+            //$service->type = $request->input('type');
             $service->title = $request->input('title');
             $service->price = $request->input('price');
-            $service->region = $request->input('region');
-            $service->municipality = $request->input('municipality');
+            //$service->region = $request->input('region');
+            //$service->municipality = $request->input('municipality');
             $service->city = $request->input('city');
             $service->description = $request->input('description');
             $service->url = $request->input('url');
-            $service->phone = $request->input('phone');
-            $service->email = $request->input('email');
+            //$service->phone = $request->input('phone');
+            //$service->email = $request->input('email');
 
 
             $service->update();
+            return redirect()->to('about');
 
             return response()->json(['changes' => 'saved.'],200);
          } catch (\Exception $e) {

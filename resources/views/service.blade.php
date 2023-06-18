@@ -11,10 +11,11 @@
     <!-- Font Awesome if you need it
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 	-->
-
+  <link rel="stylesheet" href="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/css/main.ad49aa9b.css" />
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css"/>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
 	<!--Replace with your tailwind.css once created-->
 
 
@@ -39,7 +40,7 @@
 </head>
     <body class="leading-normal tracking-normal text-gray-900 font-mono bg-gray-200 max-w-12xl mx-auto sm:px-6 lg:px-8" style="">
     
-            <div class="w-full pt-3 pb-4 sm:px-4 lg:px-10 bg-gray-800">
+            <div class="w-full pt-3 pb-4 sm:px-4 lg:px-10 bg-gray-800 overflow-x-auto">
               <div class="flex justify-between">
                 <div class="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -67,9 +68,11 @@
 
           
           <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('type')}}" method="get">
+          <p class="pr-2 text-white">></p>
           <select id="type" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" type="{{ url('search') }}" name="type">
             @php
-                $dropdownValues = ['Avto-moto',
+                $dropdownValues = ['Kategorija',
+            'Avto-moto',
             'Avdio, foto, video storitve',
             'Cenitve',
             'Cvetličarstvo, vrtnarstvo',
@@ -122,9 +125,11 @@
           </form>
 
           <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('region')}}" method="get">
+          <p class="pr-2 text-white">></p>
           <select id="region" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" type="{{ url('search') }}">
             @php
-                $dropdownValues = ['Gorenjska',
+                $dropdownValues = ['Regija',
+            'Gorenjska',
             'Goriška',
             'Jugovzhodna Slovenija',
             'Koroška',
@@ -148,15 +153,16 @@
           </form>
 
           <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('search')}}" method="get">
-          <input type="{{ url('search') }}" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" value="Naziv..." />
+          <p class="pr-2 text-white">></p>
+          <input type="{{ url('search') }}" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" placeholder="Naziv storitve..." />
           <button type="submit" class="ml-2 btn btn-primary" style="color:white">
         <i class="fa fa-search"></i>
           </button>
 
           </form>
-
            </div>
           </div>
+          
 
                 <div class="ml-2 flex">
                   @auth
@@ -189,25 +195,265 @@
 
           <!-- Cards-->
           <br />
-          <div class="flex bg-indigo-200 rounded-lg p-3 mb-4 mr-2 ml-2 text-md text-blue-700 w-82" role="alert" style="margin:0 auto; text-align:center">
+          <div class="flex bg-indigo-200 rounded-lg p-3 mb-4 mr-2 ml-2 text-md text-black w-82" role="alert" style="margin:0 auto; text-align:center">
                 <div>
-                    <span class="font-medium">Info:</span> Vaše oglase lahko upravljate iz nadzorne plošče, v kolikor vaš oglas vsebuje napako, ga lahko umaknete ter ga znova ustvarite.
+                    <span class="font-medium">Info:</span> Vaše oglase lahko ustvarite na naslednji strani, do katere lahko dostopate <a class="text-blue-700" href="/dashboard">tukaj</a>.
                 </div>
             </div>
             <br />
-          <div class="flex bg-indigo-200 rounded-lg p-3 mb-4 mr-2 ml-2 text-md text-blue-700 w-82" role="alert" style="margin:0 auto; text-align:center">
+
+            
+
+          <div class="flex bg-gray-300 rounded-lg p-3 mb-4 mr-2 ml-2 text-md text-black w-82" role="alert" style="margin:0 auto; text-align:center">
                 <div>
-                    Spletna platforma e-Storitve omogoča brezplačno oglaševanje vaših storitev.
+                    Spletni portal E-Storitve omogoča enostavno in brezplačno oglaševanje vaših storitev.
                 </div>
             </div>
-        
+            <div class="justify-center items-center text-center pt-3 pb-5 text-xl border-b border-gray-300 font-semibold">
+            <p class="pb-2">Sledite nam na:</p>
+            <a href="https://www.facebook.com/groups/estoritve"><i class="fa fa-facebook ml-2 mr-2 text-blue-700"></i></a>
+            <a href="https://www.instagram.com/estoritve/"><i class="fa fa-instagram ml-2 mr-2 text-pink-900"></i></a>
+          </div>
+            <br />  
+
+    <!-- Izpostavljeno -->
+
+    
+
+    
+
+    <!-- Mobile -->
+   <div class="block md:hidden">
+               <div class="flex flex-row">
+                 <div class="flex flex-col justify-center items-center w-40 ml-6">
+                  <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                    <div class="h-full w-full">
+                        <div class="relative w-full">
+                            <img src="https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                            <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-500 p-2 text-brand-500 hover:cursor-pointer">
+                            </button>
+                        </div>
+                        <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                            <div class="mb-2">
+                                <p class="text-lg font-bold text-navy-700"> Turizem </p>
+                            </div>
+                            <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                                <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🧳</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                            <button class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Turizem">Išči</a></button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <!-- COMPONENT START -->
+            <div class="flex flex-row">
+             <div class="flex flex-col justify-center items-center w-40 ml-6">
+              <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                <div class="h-full w-full">
+                    <div class="relative w-full">
+                    <img src="https://images.pexels.com/photos/1388278/pexels-photo-1388278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                        <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-300 p-2 text-brand-500 hover:cursor-pointer">
+                            <div class="flex h-full w-full items-center justify-center rounded-full text-xl hover:bg-gray-50">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                        <div class="mb-2">
+                            <p class="text-lg font-bold text-navy-700"> Avto-moto </p>
+                        </div>
+                        <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                            <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🚗</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                    <button class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Avto-moto">Išči</a></button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Desktop -->
+    <div class="hidden md:block">
+     <div class="ml-12 mr-12" style="display:grid;">
+               <div class="flex flex-row">
+                 <div class="flex flex-col justify-center items-center w-80 ml-6">
+                  <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                    <div class="h-full w-full">
+                        <div class="relative w-full">
+                            <img src="https://images.pexels.com/photos/4825701/pexels-photo-4825701.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                            <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-500 p-2 text-brand-500 hover:cursor-pointer">
+                            </button>
+                        </div>
+                        <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                            <div class="mb-2">
+                                <p class="text-lg font-bold text-navy-700"> Turizem </p>
+                            </div>
+                            <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                                <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🧳</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                            <button href="" class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Turizem">Išči</a></button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <!-- COMPONENT START -->
+            <div class="flex flex-row">
+             <div class="flex flex-col justify-center items-center w-80 ml-6">
+              <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                <div class="h-full w-full">
+                    <div class="relative w-full">
+                        <img src="https://images.pexels.com/photos/3781338/pexels-photo-3781338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                        <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-500 p-2 text-brand-500 hover:cursor-pointer">
+                        </button>
+                    </div>
+                    <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                        <div class="mb-2">
+                            <p class="text-lg font-bold text-navy-700"> Izobraževanje </p>
+                        </div>
+                        <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                            <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🎓</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                    <button href="" class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Izobraževanje">Išči</a></button>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </div>
+          <!-- HERE -->
+          <div class="" style="display:grid;">
+               <div class="flex flex-row">
+                 <div class="flex flex-col justify-center items-center w-80 ml-6">
+                  <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                    <div class="h-full w-full">
+                        <div class="relative w-full">
+                        <img src="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                        <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-500 p-2 text-brand-500 hover:cursor-pointer">
+                        </button>
+                    </div>
+                    <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                        <div class="mb-2">
+                            <p class="text-lg font-bold text-navy-700"> Rekreacija, Šport </p>
+                        </div>
+                        <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                            <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🏋🏻‍♀️</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                    <button href="" class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Rekreacija%2C+šport">Išči</a></button>
+                    </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <!-- COMPONENT START -->
+            <div class="flex flex-row">
+             <div class="flex flex-col justify-center items-center w-80 ml-6">
+              <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                <div class="h-full w-full">
+                    <div class="relative w-full">
+                    <img src="https://images.pexels.com/photos/1388278/pexels-photo-1388278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                        <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-300 p-2 text-brand-500 hover:cursor-pointer">
+                            <div class="flex h-full w-full items-center justify-center rounded-full text-xl hover:bg-gray-50">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                        <div class="mb-2">
+                            <p class="text-lg font-bold text-navy-700"> Avto-moto </p>
+                        </div>
+                        <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                            <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">🚗</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                    <button href="" class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Avto-moto">Išči</a></button>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            
+
+            
+          </div>
+
+            
+        </div>
+      </div>
+          <!-- END HERE -->
+          <div class="" style="display:grid;">
+               <div class="flex flex-row">
+                 <div class="flex flex-col justify-center items-center w-80 ml-6">
+                  <div class="!z-5 relative flex flex-col rounded-[20px] max-w-[300px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col w-full !p-4 3xl:p-![18px] bg-white undefined">
+                    <div class="h-full w-full">
+                        <div class="relative w-full">
+                        <img src="https://images.pexels.com/photos/7876050/pexels-photo-7876050.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="mb-3 h-full w-full rounded-xl 3xl:h-full 3xl:w-full" alt="">
+                        <button class="absolute top-3 right-3 flex items-center justify-center rounded-full bg-green-300 p-2 text-brand-500 hover:cursor-pointer">
+                            <div class="flex h-full w-full items-center justify-center rounded-full text-xl hover:bg-gray-50">
+                            </div>
+                        </button>
+                    </div>
+                    <div class="mb-3 flex items-center justify-between px-1 md:items-start">
+                        <div class="mb-2">
+                            <p class="text-lg font-bold text-navy-700"> Pravne storitve </p>
+                        </div>
+                        <div class="flex flex-row-reverse md:mt-2 lg:mt-0">
+                            <span class="z-0 ml-px inline-flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[#E0E5F2] text-xs text-navy-700 ">⚖️</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between md:items-center lg:justify-between ">
+                    <button href="" class="linear rounded-[20px] bg-brand-900 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700"><a href="/type?search=Pravne+storitve">Išči</a></button>
+                    </div>
+                    </div>
+                </div>
+                
+                
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+            
+   
+
+
+    <div class="flex items-center justify-center p-3 mt-5 mr-2 ml-2 w-82 border-t border-gray-300" role="alert">
+                <h1 class="text-5xl font-semibold text-gray-900">
+                  Storitve
+                </h1>
+            </div>
+
    <!-- Show this component on mobile -->
    <div class="block md:hidden text-center mt-5">
 
    <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('type')}}" method="get">
           <select id="type" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" type="{{ url('search') }}" name="type">
             @php
-                $dropdownValues = ['Avdio, foto, video storitve',
+                $dropdownValues = ['Kategorija storitve',
+            'Avdio, foto, video storitve',
             'Avto-moto',
             'Cenitve',
             'Cvetličarstvo, vrtnarstvo',
@@ -262,7 +508,8 @@
           <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('region')}}" method="get">
           <select id="region" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" type="{{ url('search') }}">
             @php
-                $dropdownValues = ['Gorenjska',
+                $dropdownValues = ['Regija',
+            'Gorenjska',
             'Goriška',
             'Jugovzhodna Slovenija',
             'Koroška',
@@ -286,7 +533,7 @@
           </form>
 
           <form class="w-full rounded-md px-3 py-1 flex items-center" action="{{url('search')}}" method="get">
-          <input type="{{ url('search') }}" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" value="Naziv..." />
+          <input type="{{ url('search') }}" name="search" class="w-full rounded-md border border-[#DDE2E4] px-3 py-2 text-sm" placeholder="Naziv storitve..." />
           <button type="submit" class="ml-2 btn btn-primary">
         <i class="fa fa-search"></i>
           </button>
@@ -299,11 +546,11 @@
   <div class="hidden md:block">
   <div class="" style="display:grid; grid-template-columns: repeat(4, 1fr);
           grid-gap: 10px;">
-
+        
           @auth
           @foreach($services as $service)
           <div class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-gray-800 dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
-            <img class="h-64 w-full object-cover object-center" src="{{ asset('/storage/images/services/'. $service->image) }}" alt="e-Storitve" />
+            <img class="h-64 w-full object-cover object-center" src="{{ asset('/storage/images/services/'. $service->image) }}" alt="e-Storitve.com" />
             <div class="p-4">
               <h2 class="mb-1 text-xl font-bold dark:text-white text-gray-200">{{ $service->title }} ({{$service->user_id}})</h2>
 
@@ -325,6 +572,9 @@
                 Po dogovoru
                 </p>
                 @endif
+              </div>
+              <div class="flex items-center mt-1 text-white">
+              {{$service->type}}
               </div>
             </div>
           </div>
@@ -365,7 +615,7 @@
 
   <!-- Hide this component on desktop -->
   <div class="block md:hidden">
-  <div class="" style="display:grid; grid-template-columns: repeat(1, 1fr);
+   <div class="" style="display:grid; grid-template-columns: repeat(1, 1fr);
           grid-gap: 10px;">
 
           @auth
@@ -431,16 +681,17 @@
           @endauth
     </div>
   </div>
-  
-  
 </div>
 
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
-
-
-            <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
-
-
+    <br />
+    <footer class="bg-gray-800 text-black pt-4 pb-4">
+              <div class="text-white" style="text-align: center;">
+                  <p class="font-bold">&copy; 2023 E-STORITVE.COM - Storitvene dejavnosti</p>
+                  <br />
+                  <p>Izvajanje storitev ter transakcije so prepuščene posameznikom, spletni portal ni odgovoren za morebitne izgube ali težave pri izvajanju storitev</p>
+              </div>
+    </footer>
 </body>
 </html>

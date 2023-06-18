@@ -77,6 +77,9 @@ Route::middleware([
     Route::get('/create', function() {
         return view('create');
     })->name('create');
+    Route::get('/tos', function() {
+        return view('tos');
+    })->name('tos');
     Route::post('/create', [ServiceController::class, 'store'])->name('create');
 
         /*$service = new Services;

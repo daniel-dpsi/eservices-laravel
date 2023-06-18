@@ -27,13 +27,15 @@
                             <br>
 
                             <p class="text-gray-700 font-semibold text-lg" style="text-align:center;">Vaši oglasi:</p>
+                            <p class="text-gray-700 text-md" style="text-align:center;">Z klikom na "Briši" bo vaš vnos trajno odstranjen</p>
                             <br>
-                            <table class="mx-auto max-w-2xl w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden">
+                            <table class="table-auto min-w-full mx-auto max-w-2xl whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-x-auto">
                                 <thead class="bg-gray-900">
                                     <tr class="text-white text-left">
-                                        <th class="font-semibold text-sm uppercase px-6 py-4"> Oglas </th>
-                                        <th class="font-semibold text-sm uppercase px-6 py-4"> Kategorija </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Oglas </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Kategorija </th>
                                         <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Status </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Opis </th>
                                         <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Cena (€) </th>
                                         <th class="font-semibold text-sm uppercase px-6 py-4"> </th>
                                     </tr>
@@ -44,7 +46,7 @@
                                     <tr>
                                         <td class="px-4 py-2">
                                             <div class="flex items-center space-x-3">
-                                                <div class="inline-flex w-10 h-10"> <img class="w-10 h-10 object-cover rounded-full" alt="e-Storitve" src="{{ asset('/storage/images/services/'. $service->image) }}" /> </div>
+                                                <div class="inline-flex w-24 h-24"> <img class="w-24 h-24 object-cover rounded-full" alt="e-Storitve" src="{{ asset('/storage/images/services/'. $service->image) }}" /> </div>
                                                 <div>
                                                     <p> {{ $service->title }} ({{$service->user_id}}) </p>
                                                     <p class="text-gray-500 text-sm font-semibold tracking-wide"> {{ $service->region }},<!-- {{ $service->municipality }},--> {{ $service->city }} </p>
@@ -56,6 +58,7 @@
                                             <p class="text-gray-500 text-sm font-semibold tracking-wide"> {{ $service->url }} </p>
                                         </td>
                                         <td class="px-6 py-4 text-center"> <span class="text-white text-sm w-1/3 pb-1 bg-green-600 font-semibold px-2 rounded-full"> Aktiven </span> </td>
+                                        <td class="px-6 py-4 text-center"> {{ $service->description}} </td>
                                         <td class="px-6 py-4 text-center"> {{ $service->price}} </td>
                                         <td class="px-6 py-4 text-center pt-8 text-red-800">
                                             <form method="POST" action="api/service/{{$service->id}}">
@@ -71,9 +74,70 @@
                             </table>
                             <br>
                             <hr />
+                            
+                            <p class="text-gray-700 font-semibold text-lg pt-3" style="text-align:center;">Sprememba vsebine: </p>
+                            <p class="text-gray-700 text-md" style="text-align:center;">Z klikom na "Shrani" bodo vaše spremembe uveljavljene</p>
                             <br>
-                            <p class="text-gray-700 font-semibold text-lg" style="text-align:center;">Zgled oglasa:</p>
-                            <div class="mx-auto mt-11 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
+                            <table class="table-auto min-w-full mx-auto max-w-2xl whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-x-auto">
+                                <thead class="bg-gray-900">
+                                    <tr class="text-white">
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center">Oglas</th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Kategorija </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Status </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Opis </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4 text-center"> Cena (€) </th>
+                                        <th class="font-semibold text-sm uppercase px-6 py-4"> </th>
+                                    </tr>
+                                </thead>
+                                @foreach($services as $service)
+                                <form method="POST" action="api/service/{{$service->id}}">
+                                @csrf
+                                @method('PUT')   
+                                <tbody class="divide-y divide-gray-200">
+                                    <!-- ENTRY POINT -->
+                                    
+                                    <tr>
+                                        <td class="px-4 py-2">
+                                            <div class="flex items-center space-x-3">
+                                                <div class="inline-flex w-24 h-24"> <img class="w-24 h-24 object-cover rounded-full" alt="e-Storitve" src="{{ asset('/storage/images/services/'. $service->image) }}" /> </div>
+                                                <div>
+                                                    <p class="text-gray-500 text-xs font-semibold tracking-wide">Naslov</p> <input class="border border-gray-300 rounded w-full text-xs leading-4 placeholder-gray-600 text-gray-600" type="text" name="title" id="" value="{{$service->title}}" required/> 
+                                                    <br />
+                                                    <p class="text-gray-500 text-xs font-semibold tracking-wide pt-2"> {{ $service->region }},(Kraj)<!-- {{ $service->municipality }},--></p>  <input class="border border-gray-300 rounded text-xs leading-4 placeholder-gray-600 text-gray-600" type="text" name="city" id="" value="{{$service->city}}" required/> 
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4">
+                                            <p class="text-gray-500 text-sm font-semibold tracking-wide"> {{$service->type}} </p>
+                                            <p class="text-gray-500 text-sm font-semibold tracking-wide"> <input class="border border-gray-300 p-4 rounded text-xs leading-4 placeholder-gray-600 text-gray-600" type="text" name="url" id="" value="{{$service->url}}" /> </p>
+                                        </td>
+                                        <td class="px-6 py-4 text-center"> <span class="text-white text-xs w-1/3 pb-1 bg-green-600 font-semibold px-2 rounded-full"> Aktiven </span> </td>
+                                        <td class="px-6 py-4 text-center">
+    
+                                        <!--<input rows="5" cols="60" class="border border-gray-300 p-4 text-sm leading-4 placeholder-gray-600 text-gray-600 form-group col-md-12" type="text" name="description" id="input-field" style="height:150px;" value="{{$service->description}}" required></input>-->
+
+                                        <textarea class="border border-gray-300 p-4 text-sm leading-4 placeholder-gray-600 text-gray-600" id="description" name="description" rows="5" cols="50" value="{{$service->description}}">{{$service->description}}</textarea>
+
+                                       
+
+                                        </td>
+                                        <td class="px-6 py-4 text-center"> <input class="border border-gray-300 p-4 rounded text-xs leading-4 placeholder-gray-600 text-gray-600" type="number" name="price" id="" value="{{$service->price}}"/> </td>
+                                        <td class="px-6 py-4 text-center pt-8 text-indigo-600">
+                                            
+                                            <button type="submit">Shrani</button>
+                                        </form></td>
+
+                                    </tr>
+                                   
+                                    <!-- END POINT -->
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <br>
+                            <hr />
+                            <br>
+                            <p class="text-gray-700 font-semibold text-lg" style="text-align:center;">Primer prikazanega oglasa:</p>
+                            <div class="mx-auto mt-5 w-80 transform overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-md duration-300 hover:scale-105 hover:shadow-lg">
                                 <img class="h-64 w-full object-cover object-center" src="https://cdn.discordapp.com/attachments/923643835073060886/1109214672764289185/estoritve.jpg" alt="e-Storitve" />
                                 <div class="p-4">
                                   <h2 class="mb-1 text-xl font-bold dark:text-white text-gray-900">Vaša storitev (Naslov)</h2>
@@ -95,5 +159,12 @@
                               </div>
                         </div>
                     </div>
+                    <footer class="bg-gray-800 text-black pt-4 pb-4">
+              <div class="text-white" style="text-align: center;">
+                  <p class="font-bold">&copy; 2023 E-STORITVE.COM - Storitvene dejavnosti</p>
+                  <br />
+                  <p>Izvajanje storitev ter transakcije so prepuščene posameznikom, spletni portal ni odgovoren za morebitne izgube ali težave pri izvajanju storitev</p>
+              </div>
+    </footer>
 
 </x-app-layout>
