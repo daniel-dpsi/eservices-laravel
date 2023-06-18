@@ -8,26 +8,26 @@
         <img class="h-64 w-full object-cover object-center" src="https://cdn.discordapp.com/attachments/923643835073060886/1109214672764289185/estoritve.jpg" alt="e-Storitve" />
         <x-jet-validation-errors class="mb-4" />
 
-        <form method="POST" action="{{ route('register') }}" class="font-mono">
+        <form method="POST" action="{{ route('register') }}" class="">
             @csrf
 
             <div>
-                <x-jet-label for="name" value="{{ __('IME IN PRIIMEK') }}" />
+                <x-jet-label for="name" value="{{ __('Ime in Priimek') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Janez Novak" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="email" value="{{ __('E-POŠTA') }}" />
+                <x-jet-label for="email" value="{{ __('E-Pošta') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required placeholder="info@e-storitve.com" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('GESLO') }}" />
+                <x-jet-label for="password" value="{{ __('Geslo') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" placeholder="********" />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password_confirmation" value="{{ __('POTRDI GESLO') }}" />
+                <x-jet-label for="password_confirmation" value="{{ __('Potrdi geslo') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="********" />
             </div>
 

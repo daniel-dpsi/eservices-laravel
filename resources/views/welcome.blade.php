@@ -11,8 +11,8 @@
             window.location.href = '/services'; 
         }, 4000); 
     </script>
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="Storitvene dejavnosti | E-Storitve.com">
+	<meta name="keywords" content="storitve oglasi oglasevanje prodaj kupim prodam instrukcije avto-moto e-storitve estoritve oglas turizem">
 
     <!-- Font Awesome if you need it
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">

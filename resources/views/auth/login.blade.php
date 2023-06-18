@@ -16,23 +16,23 @@
 
 
 
-        <form method="POST" action="{{ route('login') }}" class="font-mono">
+        <form method="POST" action="{{ route('login') }}" class="">
             @csrf
 
             <div >
-                <x-jet-label for="email" value="{{ __('UPORABNIŠKO IME') }}" />
+                <x-jet-label for="email" value="{{ __('Uporabniško ime') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" placeholder="info@e-storitve.si" :value="old('email')" required autofocus />
             </div>
 
             <div class="mt-4">
-                <x-jet-label for="password" value="{{ __('GESLO') }}" />
+                <x-jet-label for="password" value="{{ __('Geslo') }}" />
                 <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" placeholder="*******" required autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
                 <label for="remember_me" class="flex items-center">
                     <x-jet-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('ZAPOMNI SI ME') }}</span>
+                    <span class="ml-2 text-sm text-gray-600">{{ __('Zapomni si me') }}</span>
                 </label>
             </div>
 

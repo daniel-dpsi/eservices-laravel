@@ -8,7 +8,7 @@
         <img class="h-64 w-full object-cover object-center" src="https://cdn.discordapp.com/attachments/923643835073060886/1109214672764289185/estoritve.jpg" alt="e-Storitve" />
         <x-jet-validation-errors class="mb-4" />
 
-        <form class="font-mono" method="POST" action="{{ route('password.update') }}">
+        <form class="" method="POST" action="{{ route('password.update') }}">
             @csrf
 
             <input type="hidden" name="token" value="{{ $request->route('token') }}">

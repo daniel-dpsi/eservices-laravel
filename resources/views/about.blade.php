@@ -1,7 +1,7 @@
 <title>Nadzorna Plošča | e-Storitve</title>
 <x-app-layout>
     <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=05a16224-4c34-4db8-a343-d130a788414c"> </script>
-                <main class="font-mono">
+                <main class="">
                     <h1 class="mt-8 text-5xl font-semibold text-gray-900" style="text-align: center ">
                         OGLASNA DESKA
                     </h1>
